@@ -588,7 +588,7 @@ footer .credit a {
     right: 2rem;
   }
   .hero .content {
-    margin-top: -200px;
+    margin-top: -350px;
   }
   .about .row {
     flex-wrap: wrap;
@@ -625,7 +625,7 @@ footer .credit a {
     flex-wrap: wrap;
   }
   .modal-container {
-    height: 65%;
+    height: 69%;
   }
 }
 
