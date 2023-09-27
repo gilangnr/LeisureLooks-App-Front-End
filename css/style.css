@@ -584,9 +584,9 @@ footer .credit a {
     width: 90%;
     right: 2rem;
   }
-  .hero .content {
-    margin-top: -400px;
-  }
+  /* .hero .content {
+    margin-top: -200px;
+  } */
   .about .row {
     flex-wrap: wrap;
   }
