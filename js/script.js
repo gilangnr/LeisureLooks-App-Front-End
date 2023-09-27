@@ -44,11 +44,40 @@ btnCoffeBenas.onclick = (e) => {
   e.preventDefault();
 };
 
-// close button
-document.querySelector(".modal .close-icon").onclick = (e) => {
-  detailCoffeBeans.style.display = "none";
+document.querySelector(".sleeves").onclick = (e) => {
+  document.querySelector("#modal-sleeves").style.display = "flex";
   e.preventDefault();
 };
+document.querySelector(".loose").onclick = (e) => {
+  document.querySelector("#modal-loose").style.display = "flex";
+  e.preventDefault();
+};
+document.querySelector(".fit").onclick = (e) => {
+  document.querySelector("#modal-fit").style.display = "flex";
+  e.preventDefault();
+};
+document.querySelector(".ribbed").onclick = (e) => {
+  document.querySelector("#modal-ribbed").style.display = "flex";
+  e.preventDefault();
+};
+document.querySelector(".striped").onclick = (e) => {
+  document.querySelector("#modal-striped").style.display = "flex";
+  e.preventDefault();
+};
+
+// close button
+document.querySelectorAll(".modal .close-icon").forEach((element) => {
+  element.addEventListener("click", (e) => {
+    detailCoffeBeans.style.display = "none";
+    document.querySelector("#modal-sleeves").style.display = "none";
+    document.querySelector("#modal-loose").style.display = "none";
+    document.querySelector("#modal-fit").style.display = "none";
+    document.querySelector("#modal-ribbed").style.display = "none";
+    document.querySelector("#modal-striped").style.display = "none";
+    e.preventDefault();
+  });
+});
+
 const modal = document.querySelector("#modal-item-detail");
 window.onclick = (e) => {
   if (e.target === modal) {
@@ -61,14 +90,19 @@ document.querySelector("#cari").onclick = (e) => {
   e.preventDefault();
 };
 
-document.querySelector("#add").onclick = (e) => {
-  swal("Success!", "Successfully added to cart", "success");
-  e.preventDefault();
-};
-document.querySelector("#cart").onclick = (e) => {
-  swal("Success!", "Successfully added to cart", "success");
-  e.preventDefault();
-};
+document.querySelectorAll(".add").forEach((element) => {
+  element.addEventListener("click", (e) => {
+    swal("Success!", "Successfully added to cart", "success");
+    e.preventDefault();
+  });
+});
+
+document.querySelectorAll(".cart").forEach((element) => {
+  element.addEventListener("click", (e) => {
+    swal("Success!", "Successfully added to cart", "success");
+    e.preventDefault();
+  });
+});
 document.querySelector(".btn").onclick = (e) => {
   swal("Sent!", "Your message has been sent", "success");
   e.preventDefault();
@@ -77,7 +111,9 @@ document.querySelector(".cekout").onclick = (e) => {
   swal("Sorry :(", "Feature not working now", "error");
   e.preventDefault();
 };
-document.querySelector(".remove-item").onclick = (e) => {
-  swal("Sorry :(", "Feature not working now", "error");
-  e.preventDefault();
-};
+document.querySelectorAll(".remove-item").forEach((element) => {
+  element.addEventListener("click", (e) => {
+    swal("Sorry :(", "Feature not working now", "error");
+    e.preventDefault();
+  });
+});

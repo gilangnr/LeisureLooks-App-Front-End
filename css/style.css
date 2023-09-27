@@ -302,8 +302,11 @@ body {
 .menu .row .menu-card img {
   border-radius: 50%;
   width: 95%;
+  transition: transform 0.3s ease;
 }
-
+.menu .row .menu-card img:hover {
+  transform: scale(1.1);
+}
 .menu .row .menu-card .menu-card-tittle {
   margin: 1rem auto 0.5rem;
   color: #435334;
@@ -482,7 +485,7 @@ footer .credit a {
   padding: 1.2rem;
   border: 1px solid #666;
   width: 80%;
-  height: 45%;
+  height: 53%;
   animation: animateModal 0.5s;
   border-radius: 4px;
 }
@@ -584,9 +587,9 @@ footer .credit a {
     width: 90%;
     right: 2rem;
   }
-  /* .hero .content {
+  .hero .content {
     margin-top: -200px;
-  } */
+  }
   .about .row {
     flex-wrap: wrap;
   }
@@ -613,6 +616,7 @@ footer .credit a {
   }
   .contact .row .map {
     height: 30rem;
+    border-radius: 4px 4px 0 0;
   }
   .contact .row form {
     padding-top: 1rem;
@@ -620,11 +624,14 @@ footer .credit a {
   .modal-content {
     flex-wrap: wrap;
   }
+  .modal-container {
+    height: 65%;
+  }
 }
 
 /* mobile */
 @media (max-width: 450px) {
   html {
-    font-size: 55%;
+    font-size: 60%;
   }
 }
