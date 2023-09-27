@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEISURE LOOKS</title>
+    <link rel="icon" href="img/logo.png" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet" />
+    <!-- icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- style -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+  </head>
+  <body>
+    <!-- navbar start -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">Leisure<span>Looks</span>.</a>
+      <div class="navbar-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#newArrival">New Arrival</a>
+        <a href="#products">Products</a>
+        <a href="#Testimoni">Testimoni</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="navbar-extra">
+        <a href="#" id="search-button"><i data-feather="search"></i></a>
+        <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
+        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      </div>
+      <!-- Search Start -->
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="Search here.." />
+        <label for="search-box" id="cari"><i data-feather="search"></i></label>
+      </div>
+      <!-- Search End -->
+      <!-- Shopping cart Start -->
+      <div class="shopping-cart">
+        <div class="cart-item">
+          <img src="img/product/Corduroy Down Jacket 2.jpg" alt="Corduroy Down Jacket" />
+          <div class="item-detail">
+            <h3>Corduroy Down Jacket</h3>
+            <div class="item-price">IDR 999K</div>
+            <i data-feather="trash-2" class="remove-item"></i>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="img/product/Long Sleeves Plaid Shirt 2.jpg" alt="Long Sleeves Plaid Shirt" />
+          <div class="item-detail">
+            <h3>Long Sleeves Plaid Shirt</h3>
+            <div class="item-price">IDR 999K</div>
+            <i data-feather="trash-2" class="remove-item"></i>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="img/product/Loose Fit T-Shirt 2.jpg" alt="Loose Fit T-Shirt" />
+          <div class="item-detail">
+            <h3>Loose Fit T-Shirt</h3>
+            <div class="item-price">IDR 249K</div>
+            <i data-feather="trash-2" class="remove-item"></i>
+          </div>
+        </div>
+        <div class="cart-item">
+          <img src="img/product/Relaxed Fit Pullover 2.jpg" alt="Relaxed Fit Pullover" />
+          <div class="item-detail">
+            <h3>Relaxed Fit Pullover</h3>
+            <div class="item-price">IDR 699K</div>
+            <i data-feather="trash-2" class="remove-item"></i>
+          </div>
+        </div>
+        <a href="#" class="cekout">Check Out</a>
+      </div>
+      <!-- Shopping cart Start -->
+    </nav>
+    <!-- navbar end -->
+    <!-- hero section start -->
+
+    <section class="hero" id="home">
+      <main class="content">
+        <h1>Comfortable Elegance,<span> Effortless Style</span></h1>
+        <p>Welcome to LeisureLooks! <br />Discover the unmatched blend of comfort and effortless style in every collection. With us, elegance becomes simpler than ever before.</p>
+        <a href="#products" class="cta">Buy Now</a>
+      </main>
+    </section>
+    <!-- hero section end -->
+    <!-- about section start -->
+    <section id="about" class="about">
+      <h2><span>About</span> Us</h2>
+      <div class="row">
+        <div class="about-img">
+          <img src="img/logo.png" alt="About Us" />
+        </div>
+        <div class="content">
+          <h3>Why LeisureLooks?</h3>
+          <p>
+            At LeisureLooks, we're all about Comfortable Elegance, Effortless Style. We believe in blending comfort seamlessly with style in every product. With a focus on comfort as the foundation of genuine style and a commitment to
+            effortless fashion, we offer clothing that lets you move with ease while looking elegant. Join us in embracing Comfortable Elegance, Effortless Style and discover a new level of comfort and sophistication in your wardrobe.
+          </p>
+          <br />
+          <p>Elevate your everyday with LeisureLooks where comfort meets style. Shop now and experience Comfortable Elegance, Effortless Style!</p>
+        </div>
+      </div>
+    </section>
+    <!-- about section end -->
+    <!-- menu section start -->
+    <section id="newArrival" class="menu">
+      <h2><span>New</span> Arrival</h2>
+
+      <div class="row">
+        <div class="menu-card">
+          <img src="img/menu/Corduroy Down Jacket.jpg" alt="Corduroy Down Jacket" class="menu-card-img" />
+          <h3 class="menu-card-tittle">- Corduroy Down Jacket -</h3>
+          <p class="menu-card-price">IDR 999K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/menu/Loose Fit T-Shirt.jpg" alt="Loose Fit T-Shirt" class="menu-card-img" />
+          <h3 class="menu-card-tittle">- Loose Fit T-Shirt -</h3>
+          <p class="menu-card-price">IDR 249K</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/menu/Relaxed Fit Pullover.jpg" alt="Relaxed Fit Pullover" class="menu-card-img" />
+          <h3 class="menu-card-tittle">- Relaxed Fit Pullover -</h3>
+          <p class="menu-card-price">IDR 699K</p>
+        </div>
+      </div>
+    </section>
+    <!-- menu section end -->
+    <!-- Product Section Start -->
+    <section class="products" id="products">
+      <h2><span>Featured</span> Product</h2>
+      <p>Explore LeisureLooks' flagship offerings: high-quality apparel, stylish accessories, and unbeatable casual fashion choices</p>
+      <div class="row">
+        <div class="product-card">
+          <div class="product-icons">
+            <a href="#" id="cart"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="detail-coffe-beans"><i data-feather="eye"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/product/Corduroy Down Jacket 2.jpg" alt="Corduroy Down Jacket" />
+          </div>
+          <div class="product-content">
+            <h3>Corduroy Down Jacket</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">IDR 999K <span>IDR 1,299K</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icons">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+            <a href="#" class="detail-coffee-bottle"><i data-feather="eye"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/product/Long Sleeves Plaid Shirt 2.jpg" alt="Long Sleeves Plaid Shirt" />
+          </div>
+          <div class="product-content">
+            <h3>Long Sleeves Plaid Shirt</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">IDR 999K <span>IDR 1,299K</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icons">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+            <a href="#"><i data-feather="eye"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/product/Loose Fit T-Shirt 2.jpg" alt="Loose Fit T-Shirt" />
+          </div>
+          <div class="product-content">
+            <h3>Loose Fit T-Shirt</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">IDR 249K <span>IDR 449K</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icons">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+            <a href="#"><i data-feather="eye"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/product/Relaxed Fit Pullover 2.jpg" alt="Relaxed Fit Pullover" />
+          </div>
+          <div class="product-content">
+            <h3>Relaxed Fit Pullover</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">IDR 699K <span>IDR 899K</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icons">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+            <a href="#"><i data-feather="eye"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/product/Ribbed Button Down Polo 2.jpg" alt="Ribbed Button Down Polo" />
+          </div>
+          <div class="product-content">
+            <h3>Ribbed Button Down Polo</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">IDR 449K <span>IDR 649K</span></div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-icons">
+            <a href="#"><i data-feather="shopping-cart"></i></a>
+            <a href="#"><i data-feather="eye"></i></a>
+          </div>
+          <div class="product-image">
+            <img src="img/product/Striped T-Shirt 2.jpeg.png" alt="Striped T-Shirt" />
+          </div>
+          <div class="product-content">
+            <h3>Striped T-Shirt</h3>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star"></i>
+            </div>
+            <div class="product-price">IDR 249K <span>IDR 449K</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Product Section End -->
+    <!-- Testimoni Section Start -->
+    <section id="Testimoni" class="menu">
+      <h2><span>Customer</span> Voices</h2>
+
+      <div class="row">
+        <div class="menu-card">
+          <img src="img/testi/1.jpg" alt="Corduroy Down Jacket" class="menu-card-img" />
+          <h3 class="menu-card-tittle">Alice</h3>
+          <p class="menu-card-price">
+            "Leisure Looks is my go-to store for quality casual fashion. I've purchased several pieces from them, and everything is durable and still looks like new. They really know how to combine comfort with amazing design."
+          </p>
+        </div>
+        <div class="menu-card">
+          <img src="img/testi/2.jpg" alt="Loose Fit T-Shirt" class="menu-card-img" />
+          <h3 class="menu-card-tittle">Andy</h3>
+          <p class="menu-card-price">"I always receive lots of compliments whenever I wear Leisure Looks clothing. They have such a diverse range of styles, so I always find something that suits my personality."</p>
+        </div>
+        <div class="menu-card">
+          <img src="img/testi/3.jpg" alt="Relaxed Fit Pullover" class="menu-card-img" />
+          <h3 class="menu-card-tittle">Dio</h3>
+          <p class="menu-card-price">
+            "I'm always on the lookout for clothing that not only looks great but is also comfortable to wear all day. Leisure Looks is the answer to my search. Their clothing always provides maximum comfort without sacrificing style."
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Testimoni Section End -->
+    <!-- Contact Section Start -->
+    <section id="contact" class="contact">
+      <h2><span>Contact</span> Us</h2>
+      <p>Contact us for an enhanced shopping experience.</p>
+      <div class="row">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63371.05064813526!2d107.7372009698959!3d-6.92752972638849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c4b182af36f7%3A0xf2ccbe1f72ccb7a!2sKec.%20Jatinangor%2C%20Kabupaten%20Sumedang%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1691221919164!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="map"
+        ></iframe>
+        <form action="">
+          <div class="input-group">
+            <i data-feather="user"></i>
+            <input type="text" placeholder="Name" />
+          </div>
+          <div class="input-group">
+            <i data-feather="mail"></i>
+            <input type="text" placeholder="Email" />
+          </div>
+          <div class="input-group">
+            <i data-feather="phone"></i>
+            <input type="number" placeholder="Phone" />
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+    <!-- Contact Section End -->
+    <!-- Footer Start -->
+    <footer>
+      <div class="socials">
+        <a href="#"><i data-feather="instagram"></i></a>
+        <a href="https://github.com/gilangnr"><i data-feather="github"></i></a>
+        <a href="#"><i data-feather="linkedin"></i></a>
+      </div>
+      <div class="links">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#newArrival">New Arrival</a>
+        <a href="#products">Products</a>
+        <a href="#Testimoni">Testimoni</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="credit">
+        <p>Created by LeisureLooks | &copy; 2023.</p>
+      </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- Modal Box Item Detail Start -->
+    <div class="modal" id="modal-item-detail">
+      <div class="modal-container">
+        <a href="#" class="close-icon"><i data-feather="x"></i></a>
+        <div class="modal-content">
+          <img src="img/product/Corduroy Down Jacket.jpg" alt="Corduroy Down Jacket" />
+          <div class="product-content">
+            <h3>Corduroy Down Jacket</h3>
+            <p>
+              This loose-fit corduroy piece comes with snap closures and is crafted from a comfortable blend of 60% cotton and 40% polyester. It's designed to fit individuals with body measurements like a height of 5'7", chest of 31", waist
+              of 23", and hips of 35".
+            </p>
+            <div class="product-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="product-price">IDR 999K</div>
+            <a href="#" id="add"><i data-feather="shopping-cart"></i><span>Add to Cart</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- testing -->
+    </div>
+    <!-- Modal Box Item Detail end -->
+
+    <!-- feather icons -->
+    <script>
+      feather.replace();
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- my script -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
