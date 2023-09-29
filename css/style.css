@@ -171,7 +171,7 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url("../img/header-bg.png");
+  background-image: url("../img/header.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -190,6 +190,7 @@ body {
 .hero .content {
   padding: 1.4rem 7%;
   max-width: 60rem;
+  margin-top: -50px;
 }
 
 .hero .content h1 {
@@ -202,14 +203,67 @@ body {
 .hero .content h1 span {
   color: var(--primary);
 }
+.hero .content .dynamic-text {
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.hero .content .dynamic-text li {
+  list-style: none;
+  color: #9eb384;
+  font-size: 3.5rem;
+  font-weight: 700;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100% {
+    top: -360px;
+  }
+}
+.hero .content .dynamic-text li span {
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+.hero .content .dynamic-text li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 78px;
+  width: 100%;
+  background-color: rgba(250, 241, 228);
+  border-left: 8px solid #9eb384;
+  animation: typing 3s steps(12) infinite, blink 0.4s ease infinite;
+}
+@keyframes typing {
+  40%,
+  60% {
+    left: calc(100% + 30px);
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #9eb384;
+  }
+  to {
+    border-color: transparent;
+  }
+}
 
 .hero .content p {
   font-size: 1.6rem;
   margin-top: 0.7rem;
   line-height: 1.4;
-  font-weight: 100;
+  font-weight: 900;
   text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-  mix-blend-mode: difference;
 }
 
 .hero .content .cta {
@@ -239,6 +293,48 @@ body {
   font-size: 2.6rem;
   margin-bottom: 3rem;
   text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+.about .about-background {
+  display: flex;
+  background-image: url(../img/about-bg.png);
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position: center;
+  justify-content: center;
+}
+.menu .arrival-bg {
+  background-image: url(../img/arrival-bg.png);
+}
+.products .product-bg {
+  background-image: url(../img/product-bg.png);
+}
+.menu .testimoni-bg {
+  background-image: url(../img/testimoni-bg.png);
+}
+.contact .contact-bg {
+  background-image: url(../img/contact-bg.png);
+}
+.contact .contact-bg,
+.menu .testimoni-bg,
+.products .product-bg,
+.menu .arrival-bg {
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position: center;
+  justify-content: center;
+  height: 70px;
+}
+.products .product-bg h2,
+.menu .arrival-bg h2,
+.menu .testimoni-bg,
+.contact .contact-bg {
+  display: flex;
+  align-items: center;
+}
+
+.about .about-background h2 {
+  padding-top: 30px;
 }
 .about h2 span,
 .menu h2 span,
