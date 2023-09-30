@@ -721,7 +721,7 @@ footer .credit a {
     flex-wrap: wrap;
   }
   .modal-container {
-    height: 69%;
+    height: 90vh;
   }
 }
 
