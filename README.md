@@ -1,5 +1,5 @@
 # LeisureLooks - Website Penjualan Baju
-
+![logo](img/logo.png)
 Selamat datang di LeisureLooks, situs web penjualan baju yang akan memenuhi semua kebutuhan gaya Anda. Di sini, Anda dapat menemukan berbagai koleksi baju dengan desain terkini untuk segala kesempatan.
 
 Kunjungi situs web kami: [LeisureLooks](https://gilangnr.github.io/LeisureLooks/)
