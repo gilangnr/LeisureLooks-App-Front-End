@@ -1,4 +1,5 @@
 # LeisureLooks - Website Penjualan Baju
+
 ![logo](img/logo.png)
 Selamat datang di LeisureLooks, situs web penjualan baju yang akan memenuhi semua kebutuhan gaya Anda. Di sini, Anda dapat menemukan berbagai koleksi baju dengan desain terkini untuk segala kesempatan.
 
@@ -16,7 +17,6 @@ LeisureLooks adalah proyek website penjualan baju yang bertujuan untuk memberika
 
 - **Keranjang Belanja**: Tambahkan baju ke keranjang belanja Anda dan kelola pesanan Anda dengan mudah.
 
-
 ## Pengembang
 
 Proyek ini dikembangkan oleh kelompok 5 software di oxigen STT Bandung. Jika Anda memiliki pertanyaan, saran, atau masukan, jangan ragu untuk menghubungi kami melalui email di gilangnurrizki173@gmail.com.
@@ -28,15 +28,16 @@ Proyek ini dikembangkan oleh kelompok 5 software di oxigen STT Bandung. Jika And
 - JavaScript
 - SweetAlert
 - AOS
+- AlpineJS
 
 ## Cara Menjalankan Proyek Secara Lokal
 
 Jika Anda ingin menjalankan proyek ini secara lokal di komputer Anda, ikuti langkah-langkah berikut:
 
 1. Clone repositori ini ke komputer Anda:
-```git clone https://github.com/gilangnr/LeisureLooks.git```
+   `git clone https://github.com/gilangnr/LeisureLooks.git`
 2. Buka folder proyek:
-   ``` cd LeisureLooks ```
+   `cd LeisureLooks`
 
 3. Buka file `index.html` di peramban web Anda.
 
