@@ -17,10 +17,13 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+    <!-- AlpineJS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="src/app.js"></script>
   </head>
   <body>
     <!-- navbar start -->
-    <nav class="navbar">
+    <nav class="navbar" x-data>
       <a href="#" class="navbar-logo">Leisure<span>Looks</span>.</a>
       <div class="navbar-nav">
         <a href="#home">Home</a>
@@ -33,7 +36,10 @@
 
       <div class="navbar-extra">
         <a href="#" id="search-button"><i data-feather="search"></i></a>
-        <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
+        <a href="#" id="shopping-cart-button">
+          <i data-feather="shopping-cart"></i>
+          <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span>
+        </a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
       <!-- Search Start -->
@@ -44,39 +50,23 @@
       <!-- Search End -->
       <!-- Shopping cart Start -->
       <div class="shopping-cart">
-        <div class="cart-item">
-          <img src="img/product/Corduroy Down Jacket 2.jpg" alt="Corduroy Down Jacket" />
-          <div class="item-detail">
-            <h3>Corduroy Down Jacket</h3>
-            <div class="item-price">IDR 999K</div>
-            <i data-feather="trash-2" class="remove-item"></i>
+        <template x-for="(item, index) in $store.cart.items" x-key="index">
+          <div class="cart-item">
+            <img :src="`img/product/${item.img}`" :alt="item.name" />
+            <div class="item-detail">
+              <h3 x-text="item.name"></h3>
+              <div class="item-price">
+                <span x-text="rupiah(item.price)"></span> &times;
+                <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
+                <span x-text="item.quantity"></span>
+                <button id="add" @click="$store.cart.add(item)">&plus;</button> &equals;
+                <span x-text="rupiah(item.total)"></span>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="cart-item">
-          <img src="img/product/Long Sleeves Plaid Shirt 2.jpg" alt="Long Sleeves Plaid Shirt" />
-          <div class="item-detail">
-            <h3>Long Sleeves Plaid Shirt</h3>
-            <div class="item-price">IDR 999K</div>
-            <i data-feather="trash-2" class="remove-item"></i>
-          </div>
-        </div>
-        <div class="cart-item">
-          <img src="img/product/Loose Fit T-Shirt 2.jpg" alt="Loose Fit T-Shirt" />
-          <div class="item-detail">
-            <h3>Loose Fit T-Shirt</h3>
-            <div class="item-price">IDR 249K</div>
-            <i data-feather="trash-2" class="remove-item"></i>
-          </div>
-        </div>
-        <div class="cart-item">
-          <img src="img/product/Relaxed Fit Pullover 2.jpg" alt="Relaxed Fit Pullover" />
-          <div class="item-detail">
-            <h3>Relaxed Fit Pullover</h3>
-            <div class="item-price">IDR 699K</div>
-            <i data-feather="trash-2" class="remove-item"></i>
-          </div>
-        </div>
-        <a href="#" class="cekout">Check Out</a>
+        </template>
+        <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem">Cart is Empty</h4>
+        <h4 x-show="$store.cart.items.length">Total: <span x-text="rupiah($store.cart.total)"></span></h4>
       </div>
       <!-- Shopping cart Start -->
     </nav>
@@ -144,132 +134,52 @@
     </section>
     <!-- menu section end -->
     <!-- Product Section Start -->
-    <section class="products" id="products">
+    <section class="products" id="products" x-data="products">
       <div class="product-bg" data-aos="zoom-in">
         <h2><span>Our</span> Product</h2>
       </div>
       <p data-aos="fade-down" data-aos-duration="500">Explore LeisureLooks' flagship offerings: high-quality apparel, stylish accessories, and unbeatable casual fashion choices</p>
       <div class="row">
-        <div class="product-card" data-aos="fade-zoom-in" data-aos-duration="1000">
-          <div class="product-icons">
-            <a href="#" class="cart"><i data-feather="shopping-cart"></i></a>
-            <a href="#" class="detail-coffe-beans"><i data-feather="eye"></i></a>
-          </div>
-          <div class="product-image">
-            <img src="img/product/Corduroy Down Jacket 2.jpg" alt="Corduroy Down Jacket" />
-          </div>
-          <div class="product-content">
-            <h3>Corduroy Down Jacket</h3>
-            <div class="product-stars">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
+        <template x-for="(item, index) in items" x-key="index">
+          <div class="product-card" data-aos="fade-zoom-in" data-aos-duration="1000">
+            <div class="product-icons">
+              <a href="#" class="cart" @click.prevent="$store.cart.add(item)">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <use href="img/feather-sprite.svg#shopping-cart" />
+                </svg>
+              </a>
+              <a href="#" class="detail-coffe-beans">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <use href="img/feather-sprite.svg#eye" />
+                </svg>
+              </a>
             </div>
-            <div class="product-price">IDR 999K <span>IDR 1,299K</span></div>
-          </div>
-        </div>
-        <div class="product-card" data-aos="fade-zoom-in" data-aos-duration="1000">
-          <div class="product-icons">
-            <a href="#" class="cart"><i data-feather="shopping-cart"></i></a>
-            <a href="#" class="sleeves"><i data-feather="eye"></i></a>
-          </div>
-          <div class="product-image">
-            <img src="img/product/Long Sleeves Plaid Shirt 2.jpg" alt="Long Sleeves Plaid Shirt" />
-          </div>
-          <div class="product-content">
-            <h3>Long Sleeves Plaid Shirt</h3>
-            <div class="product-stars">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
+            <div class="product-image">
+              <img :src="`img/product/${item.img}`" :alt="item.name" />
             </div>
-            <div class="product-price">IDR 999K <span>IDR 1,299K</span></div>
-          </div>
-        </div>
-        <div class="product-card" data-aos="fade-zoom-in" data-aos-duration="1000">
-          <div class="product-icons">
-            <a href="#" class="cart"><i data-feather="shopping-cart"></i></a>
-            <a href="#" class="loose"><i data-feather="eye"></i></a>
-          </div>
-          <div class="product-image">
-            <img src="img/product/Loose Fit T-Shirt 2.jpg" alt="Loose Fit T-Shirt" />
-          </div>
-          <div class="product-content">
-            <h3>Loose Fit T-Shirt</h3>
-            <div class="product-stars">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
+            <div class="product-content">
+              <h3 x-text="item.name"></h3>
+              <div class="product-stars">
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+                <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <use href="img/feather-sprite.svg#star" />
+                </svg>
+              </div>
+              <div class="product-price"><span x-text="rupiah(item.price)"></span></div>
             </div>
-            <div class="product-price">IDR 249K <span>IDR 449K</span></div>
           </div>
-        </div>
-        <div class="product-card" data-aos="fade-zoom-in" data-aos-duration="1000">
-          <div class="product-icons">
-            <a href="#" class="cart"><i data-feather="shopping-cart"></i></a>
-            <a href="#" class="fit"><i data-feather="eye"></i></a>
-          </div>
-          <div class="product-image">
-            <img src="img/product/Relaxed Fit Pullover 2.jpg" alt="Relaxed Fit Pullover" />
-          </div>
-          <div class="product-content">
-            <h3>Relaxed Fit Pullover</h3>
-            <div class="product-stars">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-            </div>
-            <div class="product-price">IDR 699K <span>IDR 899K</span></div>
-          </div>
-        </div>
-        <div class="product-card" data-aos="fade-zoom-in" data-aos-duration="1000">
-          <div class="product-icons">
-            <a href="#" class="cart"><i data-feather="shopping-cart"></i></a>
-            <a href="#" class="ribbed"><i data-feather="eye"></i></a>
-          </div>
-          <div class="product-image">
-            <img src="img/product/Ribbed Button Down Polo 2.jpg" alt="Ribbed Button Down Polo" />
-          </div>
-          <div class="product-content">
-            <h3>Ribbed Button Down Polo</h3>
-            <div class="product-stars">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
-            </div>
-            <div class="product-price">IDR 449K <span>IDR 649K</span></div>
-          </div>
-        </div>
-        <div class="product-card" data-aos="fade-zoom-in" data-aos-duration="1000">
-          <div class="product-icons">
-            <a href="#" class="cart"><i data-feather="shopping-cart"></i></a>
-            <a href="#" class="striped"><i data-feather="eye"></i></a>
-          </div>
-          <div class="product-image">
-            <img src="img/product/Striped T-Shirt 2.jpeg.png" alt="Striped T-Shirt" />
-          </div>
-          <div class="product-content">
-            <h3>Striped T-Shirt</h3>
-            <div class="product-stars">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star"></i>
-            </div>
-            <div class="product-price">IDR 249K <span>IDR 449K</span></div>
-          </div>
-        </div>
+        </template>
       </div>
     </section>
     <!-- Product Section End -->
