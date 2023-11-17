@@ -2,6 +2,19 @@
   --primary: #435334;
   --bg: #cedebd;
 }
+.swal-modal {
+  background-color: white;
+}
+.swal-button {
+  background-color: var(--primary);
+  color: white;
+}
+.swal-button:hover {
+  background-color: var(--bg) !important;
+}
+.swal-icon--success [class^="swal-icon--success__line"] {
+  background-color: var(--primary); /* Ganti warna centang sesuai variabel warna primer Anda */
+}
 * {
   margin: 0;
   padding: 0;

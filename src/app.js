@@ -22,6 +22,7 @@ document.addEventListener("alpine:init", () => {
         this.items.push({ ...newItem, quantity: 1, total: newItem.price });
         this.quantity++;
         this.total += newItem.price;
+        swal("Success!", "Successfully added to cart", "success");
       } else {
         this.items = this.items.map((item) => {
           if (item.id !== newItem.id) {
@@ -68,3 +69,37 @@ const rupiah = (number) => {
     minimumFractionDigits: 0,
   }).format(number);
 };
+// testing
+document.addEventListener("DOMContentLoaded", function () {
+  const detailCoffeBeans = document.querySelector("#modal-item-detail");
+  const btnCoffeBenas = document.querySelector(".detail-coffe-beans");
+
+  btnCoffeBenas.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (detailCoffeBeans) {
+      detailCoffeBeans.style.display = "flex";
+    } else {
+      console.log("#modal-item-detail not found!");
+    }
+  });
+});
+// close button modal box
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.querySelector("#modal-item-detail");
+
+  // Close modal when clicking outside
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // Close modal when clicking the close icon
+  document.querySelectorAll(".close-icon").forEach((element) => {
+    element.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+  });
+});
+
+// TODO: keseluruhan modal box, button add to cart di modal box

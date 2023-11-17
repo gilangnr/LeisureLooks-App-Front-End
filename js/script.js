@@ -37,13 +37,6 @@ document.addEventListener("click", function (e) {
   }
 });
 // modal box
-const detailCoffeBeans = document.querySelector("#modal-item-detail");
-const btnCoffeBenas = document.querySelector(".detail-coffe-beans");
-btnCoffeBenas.onclick = (e) => {
-  detailCoffeBeans.style.display = "flex";
-  e.preventDefault();
-};
-
 document.querySelector(".sleeves").onclick = (e) => {
   document.querySelector("#modal-sleeves").style.display = "flex";
   e.preventDefault();
@@ -78,12 +71,6 @@ document.querySelectorAll(".modal .close-icon").forEach((element) => {
   });
 });
 
-const modal = document.querySelector("#modal-item-detail");
-window.onclick = (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-};
 // notification
 document.querySelector("#cari").onclick = (e) => {
   swal("Sorry :(", "Feature not working now", "error");
