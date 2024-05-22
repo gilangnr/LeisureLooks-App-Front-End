@@ -109,30 +109,21 @@
       </div>
     </section>
     <!-- about section end -->
+
+    <div class="tesData">
+      <h1 class="nama">tesss</h1>
+      <p class="harga"></p>
+      <p class="deskripsi"></p>
+    </div>
     <!-- menu section start -->
     <section id="newArrival" class="menu">
       <div class="arrival-bg" data-aos="zoom-in">
         <h2><span>New</span> Arrival</h2>
       </div>
-      <div class="row">
-        <div class="menu-card" data-aos="fade-up" data-aos-duration="1000">
-          <img src="img/menu/Corduroy Down Jacket.jpg" alt="Corduroy Down Jacket" class="menu-card-img" />
-          <h3 class="menu-card-tittle">- Corduroy Down Jacket -</h3>
-          <p class="menu-card-price">IDR 999K</p>
-        </div>
-        <div class="menu-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-          <img src="img/menu/Loose Fit T-Shirt.jpg" alt="Loose Fit T-Shirt" class="menu-card-img" />
-          <h3 class="menu-card-tittle">- Loose Fit T-Shirt -</h3>
-          <p class="menu-card-price">IDR 249K</p>
-        </div>
-        <div class="menu-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
-          <img src="img/menu/Relaxed Fit Pullover.jpg" alt="Relaxed Fit Pullover" class="menu-card-img" />
-          <h3 class="menu-card-tittle">- Relaxed Fit Pullover -</h3>
-          <p class="menu-card-price">IDR 699K</p>
-        </div>
-      </div>
+      <div class="row" id="product-container"></div>
     </section>
     <!-- menu section end -->
+
     <!-- Product Section Start -->
     <section class="products" id="products" x-data="products">
       <div class="product-bg" data-aos="zoom-in">
@@ -225,20 +216,21 @@
           referrerpolicy="no-referrer-when-downgrade"
           class="map"
         ></iframe>
-        <form action="">
+        <form action="" id="login">
           <div class="input-group">
             <i data-feather="user"></i>
-            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="email" id="email" />
           </div>
           <div class="input-group">
             <i data-feather="mail"></i>
-            <input type="text" placeholder="Email" />
+            <input type="password" placeholder="password" id="password" />
           </div>
-          <div class="input-group">
+
+          <!-- <div class="input-group">
             <i data-feather="phone"></i>
             <input type="number" placeholder="Phone" />
-          </div>
-          <button type="submit" class="btn">Send Message</button>
+          </div> -->
+          <button type="submit" class="btn" id="submit">Send Message</button>
         </form>
       </div>
     </section>

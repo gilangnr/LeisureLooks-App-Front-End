@@ -1,6 +1,71 @@
+// fecth data
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const productContainer = document.getElementById("product-container");
+
+  try {
+    const response = await fetch("http://localhost:3000/product", {
+      method: "GET",
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+
+    const data = await response.json();
+
+    if (data.status === 200 && data.data.length > 0) {
+      data.data.forEach((product, index) => {
+        const delay = index * 400; // menambahkan delay untuk animasi
+        const productCard = document.createElement("div");
+        productCard.classList.add("menu-card");
+        productCard.setAttribute("data-aos", "fade-up");
+        productCard.setAttribute("data-aos-duration", "1000");
+        productCard.setAttribute("data-aos-delay", delay);
+
+        productCard.innerHTML = `
+                  <img src="img/menu/Corduroy Down Jacket.jpg" alt="${product.name}" class="menu-card-img" />
+                  <h3 class="menu-card-tittle">- ${product.name} -</h3>
+                  <p class="menu-card-price">IDR ${product.price}K</p>
+              `;
+
+        productContainer.appendChild(productCard);
+      });
+    } else {
+      productContainer.innerHTML = "<p>No data found</p>";
+    }
+  } catch (error) {
+    console.error("Fetch error:", error);
+    productContainer.innerHTML = "<p>Error loading data</p>";
+  }
+});
+document.getElementById("login").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  const response = await fetch("http://localhost:3000/auth/login", {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      email,
+      password,
+    }),
+  });
+
+  const result = await response.json();
+  const { status } = result;
+  if (status == 200) {
+    alert("Login berhasil");
+  } else {
+    alert(result.message);
+  }
+});
+
 // toggle class active hamburger
 const navbarNav = document.querySelector(".navbar-nav");
-// when hamburger menu on click
 document.querySelector("#hamburger-menu").onclick = () => {
   navbarNav.classList.toggle("active");
 };
@@ -36,6 +101,7 @@ document.addEventListener("click", function (e) {
     shoppingCart.classList.remove("active");
   }
 });
+
 // modal box
 document.querySelector(".sleeves").onclick = (e) => {
   document.querySelector("#modal-sleeves").style.display = "flex";
