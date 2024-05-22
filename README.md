@@ -1,9 +1,6 @@
-# LeisureLooks - Website Penjualan Baju
+# LeisureLooks - On Maintenance
 
-![logo](img/logo.png)
-Selamat datang di LeisureLooks, situs web penjualan baju yang akan memenuhi semua kebutuhan gaya Anda. Di sini, Anda dapat menemukan berbagai koleksi baju dengan desain terkini untuk segala kesempatan.
-
-Kunjungi situs web kami: [LeisureLooks](https://gilangnr.github.io/LeisureLooks/)
+See preview: [LeisureLooks](https://gilangnr.github.io/LeisureLooks/)
 
 ## Deskripsi Proyek
 
@@ -17,34 +14,26 @@ LeisureLooks adalah proyek website penjualan baju yang bertujuan untuk memberika
 
 - **Keranjang Belanja**: Tambahkan baju ke keranjang belanja Anda dan kelola pesanan Anda dengan mudah.
 
+- **Payment Checkout**: Soon
+
+- **Admin Dashboard**: Soon
+
 ## Pengembang
 
-Proyek ini dikembangkan oleh kelompok 5 software di oxigen STT Bandung. Jika Anda memiliki pertanyaan, saran, atau masukan, jangan ragu untuk menghubungi kami melalui email di gilangnurrizki173@gmail.com.
+- Gilang Nur Rizki as Front End
+- Gerry Desrian as Back End
 
 ## Teknologi yang Digunakan
+
+### Front-End
 
 - HTML
 - CSS
 - JavaScript
 - SweetAlert
 - AOS
-- AlpineJS
 
-## Cara Menjalankan Proyek Secara Lokal
+### Back-End
 
-Jika Anda ingin menjalankan proyek ini secara lokal di komputer Anda, ikuti langkah-langkah berikut:
-
-1. Clone repositori ini ke komputer Anda:
-   `git clone https://github.com/gilangnr/LeisureLooks.git`
-2. Buka folder proyek:
-   `cd LeisureLooks`
-
-3. Buka file `index.html` di peramban web Anda.
-
-## Kontribusi
-
-Kami sangat terbuka terhadap kontribusi dari komunitas. Jika Anda ingin berkontribusi pada proyek ini, silakan buat "pull request" atau hubungi kami melalui email di gilangnurrizki173@gmail.com untuk berdiskusi lebih lanjut.
-
-Terima kasih telah mengunjungi LeisureLooks! Kami berharap Anda menikmati pengalaman berbelanja baju dengan kami.
-
-Kunjungi situs web kami: [LeisureLooks](https://gilangnr.github.io/LeisureLooks/)
+- Node Js
+- Prisma
