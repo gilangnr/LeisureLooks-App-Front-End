@@ -2,7 +2,7 @@
 
 See preview: [LeisureLooks](https://gilangnr.github.io/LeisureLooks/)
 
-## Deskripsi Proyek
+## Deskripsi Proyek 
 
 LeisureLooks adalah proyek website penjualan baju yang bertujuan untuk memberikan pengalaman belanja online yang menyenangkan dan mudah bagi pelanggan. Website ini menyediakan berbagai pilihan baju dengan berbagai gaya, ukuran, dan warna yang dapat disesuaikan dengan preferensi Anda.
 
