@@ -1,6 +1,6 @@
 # LeisureLooks - On Maintenance
 
-See preview: [LeisureLooks](https://gilangnr.github.io/LeisureLooks/)
+See preview: [LeisureLooks](https://gilangnr.github.io/LeisureLooks-App-Front-End/)
 
 ## Deskripsi Proyek 
 
