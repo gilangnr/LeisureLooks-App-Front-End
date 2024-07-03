@@ -2,7 +2,7 @@
 const navbarNav = document.querySelector(".navbar-nav");
 // when hamburger menu on click
 document.querySelector("#hamburger-menu").onclick = () => {
-  navbarNav.classList.toggle("active");
+  navbarNav.classList.toggle("active"); 
 };
 
 // toogle class active search
