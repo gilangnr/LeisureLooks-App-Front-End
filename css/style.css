@@ -13,7 +13,7 @@
   background-color: var(--bg) !important;
 }
 .swal-icon--success [class^="swal-icon--success__line"] {
-  background-color: var(--primary); /* Ganti warna centang sesuai variabel warna primer Anda */
+  background-color: var(--primary);
 }
 * {
   margin: 0;
